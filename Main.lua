@@ -19,7 +19,7 @@ local function SlashCmd(cmd,self)
 end
 SlashCmdList["PAL"] = SlashCmd;
 
--- From Daniele Alessandri’s gist
+-- print_r function From Daniele Alessandri’s gist
 -- https://gist.github.com/nrk/31175
 
 local function print_r ( t ) 
@@ -48,8 +48,8 @@ local function print_r ( t )
 end
 
 
--- This function get called when specific events get fired
--- Cette fonction est appelée quand certains événements se produisent
+-- This function gets called when the registered events (see below) get fired
+-- Cette fonction est appelée quand l’événement auquel on s’est inscrit (voir plus bas) se produti
 
 Paladdon:SetScript("OnEvent",function(...)
 	local args = {...}
@@ -85,7 +85,7 @@ Paladdon:SetScript("OnEvent",function(...)
 end)
 
 -- Register to successful speelcast events
--- On s’inscrit aux événements de type «incantation réussie»
+-- On s’inscrit aux événements de type «l’incantation a réussi»
 Paladdon:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
 
 DEFAULT_CHAT_FRAME:AddMessage("Paladdon loaded, yeah!",1,0,0)
